@@ -1,0 +1,121 @@
+.contentBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+    background: #1f293a;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.containerr{
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerr span {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background: #2c4766;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.3) rotate(calc(var(--i) * (360deg / 51)));
+    animation: animateBlink 3s linear infinite;
+    animation-delay: calc(var(--i)*(3s /51));
+  }
+  
+  @keyframes animateBlink{
+    0%{
+        background:#0ef;
+    }
+
+    25%{
+        background:#fff;
+    }
+}
+
+.login-box{
+    position: absolute;
+    width: 400px;
+}
+
+.login-box form{
+    width: 100%;
+    padding: 0 50px;
+}
+
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    margin: 25px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #2c4766;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 40px;
+    transition: .5s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid{
+    border-color: #0ef;
+    z-index: 1;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    background-color: #1f293a;
+    transition: .5s ease;
+}
+
+.btnn{
+    width: 100%;
+    height: 45px;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #1f293a;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btnn:hover {
+    background-color: orange;
+    color: #1f293a;
+  }
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box label.active {
+  top: 1px;
+  font-size: 0.8em;
+  padding: 0 6px;
+  color: #0ef;
+  background-color: #1f293a;
+}
